@@ -1,6 +1,6 @@
 /* TIS SmartCalc service worker — offline cache */
-const CACHE = 'tis-smartcalc-v1';
-const FILES = ['./', 'index.html', 'css/style.css', 'js/engine.js', 'js/scientific.js', 'js/models.js', 'js/app.js',
+const CACHE = 'tis-smartcalc-v3';
+const FILES = ['./', 'index.html', 'css/style.css', 'js/engine.js', 'js/scientific.js', 'js/models.js', 'js/tools.js', 'js/app.js',
   'manifest.webmanifest', 'assets/logo.svg', 'assets/profile.jpg', 'assets/channel.jpg', 'assets/icons/icon-192.png', 'assets/icons/icon-512.png'];
 self.addEventListener('install', (e) => { e.waitUntil(caches.open(CACHE).then((c) => c.addAll(FILES))); self.skipWaiting(); });
 self.addEventListener('activate', (e) => {

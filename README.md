@@ -23,6 +23,9 @@ by <b>তারিকুল ইসলাম (সুমন)</b> — MSc Mathemati
 | **G-Plot** | Graphing | 4 functions, pan / zoom / pinch, trace, roots, min/max, intersections, shaded ∫ area, value table |
 | **ST-Data** | Statistics | Mean, median, mode, σ, s, quartiles, frequency data, linear regression with r, histogram + box plot, scatter + line |
 | **PX-Base** | Programmer | HEX/DEC/OCT/BIN at once, AND OR XOR XNOR NOT Neg, shifts, 32-bit |
+| **Chart-Lab** | Pie · Donut · Line graph | Editable data table, auto percentages, up to 6 lines, hover values, animated drawing, Save as PNG |
+| **Date** | Date · Month · Year | Difference in years/months/days, total days/weeks/weekdays, add or subtract Y/M/W/D, age & next birthday, weekday in English + বাংলা |
+| **CGPA** | GPA / CGPA | Out of **4.00** (UGC university scale, credit-weighted) and **5.00** (SSC/HSC, 4th-subject bonus, F rule); grade or marks %, optional subject & code, cumulative CGPA from previous CGPA + credits |
 
 ### 🎓 Online-class tools
 - **Keys** – pressed keys appear big on screen, so students can follow along during screen-share
@@ -83,6 +86,7 @@ css/style.css         all styling & animations
 js/engine.js          parser, exact-form formatter, calculus, solvers
 js/scientific.js      SX-Pro scientific model
 js/models.js          B-12, G-Plot, ST-Data, PX-Base
+js/tools.js           Chart-Lab, Date, CGPA
 js/app.js             model switching, class tools, history, PWA
 sw.js, manifest.webmanifest   offline + install
 .github/workflows/build-apk.yml   APK build

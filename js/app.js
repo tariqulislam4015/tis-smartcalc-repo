@@ -73,7 +73,7 @@
   renderHist();
 
   /* ---------- models ---------- */
-  const hooks = { key: keycast, sound: click, history: addHist, switchModel: (m) => selectModel(m) };
+  const hooks = { key: keycast, sound: click, history: addHist, copy: (t) => (t ? copy(t) : toast('Nothing to copy yet')), switchModel: (m) => selectModel(m) };
   const models = {};
   const builders = {
     scientific: (el) => TISScientific.create(el, hooks),
@@ -81,6 +81,9 @@
     graph: (el) => TISModels.createGraph(el, hooks),
     stat: (el) => TISModels.createStat(el, hooks),
     programmer: (el) => TISModels.createProgrammer(el, hooks),
+    charts: (el) => TISTools.createCharts(el, hooks),
+    date: (el) => TISTools.createDate(el, hooks),
+    cgpa: (el) => TISTools.createCGPA(el, hooks),
   };
   const TIPS = {
     scientific: `<ul>
@@ -94,6 +97,9 @@
     graph: `<ul><li>f(x) লিখুন: <code>x^2-4</code>, <code>2sin(x)</code>, <code>sqrt(x)</code>, <code>1/x</code></li><li>Drag = সরানো, wheel / pinch = zoom, hover = trace</li><li>Roots, Min/Max, Intersection ও ∫ Area এক ক্লিকে</li></ul>`,
     stat: `<ul><li>Data কমা/স্পেস দিয়ে লিখুন → Calculate</li><li>Y দিলে linear regression ŷ = A + Bx ও r</li><li>"Use Y as frequency" দিয়ে frequency table</li></ul>`,
     programmer: `<ul><li>HEX · DEC · OCT · BIN — চাপলেই base বদলায়</li><li>AND OR XOR XNOR NOT Neg, &lt;&lt; &gt;&gt; (32-bit)</li><li>Keyboard: & | ^ ~ ও hex digits</li></ul>`,
+    charts: `<ul><li>Pie, Donut বা Line graph বেছে নিন</li><li>টেবিলে Label ও Value লিখুন — chart সাথে সাথে বদলায়, % নিজে থেকেই হিসাব হয়</li><li>Line graph-এ <b>+ Line</b> দিয়ে একাধিক রেখা তুলনা করুন</li><li>Chart-এর উপর mouse রাখলে মান দেখায় · <b>Save as PNG</b></li></ul>`,
+    date: `<ul><li><b>Between two dates</b>: কত বছর-মাস-দিন, মোট দিন, সপ্তাহ, কর্মদিবস</li><li><b>Add / Subtract</b>: কোনো তারিখে বছর/মাস/সপ্তাহ/দিন যোগ-বিয়োগ</li><li><b>Age</b>: বয়স, মোট দিন, পরের জন্মদিন কবে</li><li>বার (Day) বাংলা ও ইংরেজিতে দেখায়</li></ul>`,
+    cgpa: `<ul><li><b>4.00</b> (University, UGC) বা <b>5.00</b> (SSC/HSC) scale</li><li>Grade বেছে নিন, অথবা Marks (%) দিলে grade নিজে থেকে আসবে</li><li>Subject ও Code optional · Enter চাপলে নতুন সারি</li><li>আগের CGPA ও credit দিলে নতুন cumulative CGPA</li><li>5.00-এ 4th subject টিক দিন — ২.০০-এর বেশি অংশ যোগ হয়</li></ul>`,
   };
   let active = null;
   function selectModel(name) {
