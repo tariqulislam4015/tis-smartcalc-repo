@@ -1,0 +1,6 @@
+{
+  "appId": "com.tisacademy.smartcalc",
+  "appName": "TIS SmartCalc",
+  "webDir": "www",
+  "android": { "backgroundColor": "#071012" }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "tis-smartcalc",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TIS SmartCalc — scientific calculator emulator suite (web + Android APK)",
+  "author": "Tariqul Islam (Sumon) <https://github.com/tariqulislam4015>",
+  "license": "MIT",
+  "scripts": {
+    "build:web": "node scripts/copy-web.js",
+    "serve": "npx --yes http-server -p 8080 -c-1 ."
+  },
+  "devDependencies": {
+    "@capacitor/android": "^6.2.0",
+    "@capacitor/cli": "^6.2.0",
+    "@capacitor/core": "^6.2.0"
+  }
+}
